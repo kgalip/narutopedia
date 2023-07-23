@@ -5,7 +5,7 @@
 }
 
 @mixin header-footer {
-    background-image: linear-gradient(to right, hsla(0, 0%, 2%, 0.65), hsla(0, 0%, 11%, 0.65));
+    background-image: linear-gradient(to right, hsla(0, 0%, 2%, 0.75), hsla(0, 0%, 11%, 0.75));
     backdrop-filter: blur(7px);
 
     @include screen-425 {

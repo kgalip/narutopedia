@@ -84,6 +84,7 @@ header > nav {
         }
 
         > p {
+            color: $main-light;
             display: none;
         }
     }
@@ -148,6 +149,7 @@ header > nav {
             > p {
                 font-size: 0.75rem;
                 margin-top: 0.8rem;
+                margin-bottom: 0.2rem;
                 margin-left: 0.7rem;
                 display: block;
             }
