@@ -1,0 +1,192 @@
+@mixin home-section {
+    text-align: center;
+    background-image: radial-gradient(hsla(0, 0%, 85%, 0.9), hsla(0, 0%, 85%, 0.95));
+    border-radius: 0.6rem;
+    padding: 1rem;
+    margin-top: 1rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    @include screen-425 {
+        text-align: start;
+    }
+
+    @include screen-768 {
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+    }
+}
+
+@mixin home-section-dark {
+    background-image: radial-gradient(hsla(0, 0%, 100%, 0.07), hsla(0, 0%, 100%, 0.05));
+}
+
+.home-welcome {
+    @include home-section;
+
+    > h1 {
+        font-size: 1.75rem;
+    }
+
+    > p {
+        line-height: 1.6rem;
+        margin-top: 0.5rem;
+    }
+}
+
+.home-discover {
+    @include home-section;
+
+    > h2 {
+        font-size: 1.5rem;
+    }
+
+    > div {
+        width: 100%;
+        padding: 1rem 0;
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        > a {
+            font-size: 0;
+            width: 100%;
+
+            > img {
+                border-radius: 15px;
+                outline: 1px solid $dark-orange;
+                outline-offset: 2px;
+                width: 100%;
+                height: auto;
+                aspect-ratio: 5 / 3.2;
+                object-fit: cover;
+            }
+        }
+
+        > div {
+            > h2 {
+                font-size: 1.55rem;
+            }
+
+            > p {
+                margin-top: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            > a {
+                font-size: 1.1rem;
+                color: $dark-orange;
+                text-shadow: none;
+                text-underline-offset: 3px;
+            }
+        }
+    }
+
+    > p {
+        line-height: 1.6rem;
+        margin-top: 3rem;
+    }
+}
+
+@include dark-theme {
+    .home-welcome {
+        @include home-section-dark;
+
+        > h1 {
+            text-shadow: 2px 2px $main-dark;
+        }
+
+        > p {
+            text-shadow: 1px 1px $main-dark;
+        }
+    }
+
+    .home-discover {
+        @include home-section-dark;
+
+        > h2 {
+            text-shadow: 2px 2px $main-dark;
+        }
+
+        > div {
+            text-shadow: 1px 1px $main-dark;
+        }
+
+        > p {
+            text-shadow: 1px 1px $main-dark;
+        }
+    }
+}
+
+@include screen-425 {
+    .home-welcome {
+        > h1 {
+            font-size: 2rem;
+        }
+        > p {
+            font-size: $big-p;
+        }
+    }
+
+    .home-discover {
+        > h2 {
+            font-size: 1.75rem;
+        }
+
+        > div {
+            font-size: $big-p;
+            gap: 1.5rem;
+
+            > div {
+                > a {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        > p {
+            font-size: $big-p;
+        }
+    }
+}
+
+@include screen-768 {
+    .home-discover {
+        > div {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+
+            > a {
+                $img-width: 240px;
+
+                width: $img-width;
+
+                > img {
+                    width: $img-width;
+                }
+            }
+        }
+    }
+}
+
+@include screen-1024 {
+    .home-discover {
+        > div {
+            > a {
+                $img-width: 320px;
+
+                width: $img-width;
+
+                > img {
+                    width: $img-width;
+                }
+            }
+        }
+    }
+}

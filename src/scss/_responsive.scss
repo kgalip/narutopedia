@@ -1,0 +1,38 @@
+@mixin dark-theme {
+    body.dark {
+        @content;
+    }
+}
+
+@mixin header-footer {
+    background-image: linear-gradient(to right, hsla(0, 0%, 2%, 0.65), hsla(0, 0%, 11%, 0.65));
+    backdrop-filter: blur(7px);
+
+    @include screen-425 {
+        padding: 1rem;
+    }
+}
+
+@mixin screen-375 {
+    @media screen and (min-width: 375px) {
+        @content;
+    }
+}
+
+@mixin screen-425 {
+    @media screen and (min-width: 425px) {
+        @content;
+    }
+}
+
+@mixin screen-768 {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin screen-1024 {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}

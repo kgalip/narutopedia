@@ -1,95 +1,53 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import discoverData from "@/app/lib/discoverData";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    return (
+        <main className="home-main">
+            <section className="home-welcome">
+                <h1>The Naruto Universe: A Thrilling Saga of Ninjas, Friendship, and Adventure!</h1>
+                <p>
+                    Join Naruto on an epic journey through a world of powerful ninjas, intricate
+                    lore, and exhilarating battles. Created by Masashi Kishimoto, Naruto is a
+                    legendary manga and anime series that has captivated fans worldwide. Follow
+                    Naruto Uzumaki, Sakura Haruno, and Sasuke Uchiha as they train, face formidable
+                    foes, and forge unbreakable bonds. From the original series to Naruto Shippuden
+                    and Boruto: Naruto Next Generations, immerse yourself in a universe filled with
+                    chakra, epic battles, and profound themes of growth and friendship. Discover the
+                    vibrant tapestry of ninja villages, honor, and the pursuit of dreams. Experience
+                    the adventure that has made Naruto an enduring franchise in the world of anime
+                    and manga.
+                </p>
+            </section>
+            <section className="home-discover">
+                <h2>Discover the Captivating World of Naruto</h2>
+                {discoverData.map((item, idx) => (
+                    <div key={idx}>
+                        <Link href={`/list/${item.search}/1`}>
+                            <Image
+                                src={item.image}
+                                width={200}
+                                height={140}
+                                alt="Discover"
+                                quality="85"
+                            />
+                        </Link>
+                        <div>
+                            <h2>{item.title}</h2>
+                            <p>{item.description}</p>
+                            <Link href={`/list/${item.search}/1`}>Discover More &#8599;</Link>
+                        </div>
+                    </div>
+                ))}
+                <p>
+                    Embark on an exploration of these captivating topics and uncover the intricacies
+                    of the Naruto universe. Whether you&apos;re a longtime fan or new to the series,
+                    there is always something fascinating to discover in this world of ninjas,
+                    adventure, and unbreakable bonds. Begin your journey and experience the magic of
+                    Naruto like never before.
+                </p>
+            </section>
+        </main>
+    );
 }
