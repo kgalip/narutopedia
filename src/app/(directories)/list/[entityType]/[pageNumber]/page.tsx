@@ -74,6 +74,12 @@ export default async function ListPage(props: Props) {
 }
 
 export async function generateStaticParams() {
+    return discoverData.map((item) => ({ entityType: item.search, pageNumber: "1" }));
+}
+
+/* Vercel throws error on build, so not generating every single page, just the first pages */
+
+/* export async function generateStaticParams() {
     // Getting discoverData used for main page, then getting display data from getDisplayData, to fetch entities list data in the following function (allPagesData).
     const entityDisplayDataArray = discoverData.map((item) =>
         getDisplayData(item.search as EntityType)
@@ -107,4 +113,4 @@ export async function generateStaticParams() {
     }
 
     return getStaticParams();
-}
+} */

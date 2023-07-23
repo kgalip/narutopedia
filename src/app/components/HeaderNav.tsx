@@ -30,7 +30,7 @@ export default function HeaderNav(props: Props) {
         window.addEventListener("click", navigationWindowClick);
 
         return () => window.removeEventListener("click", navigationWindowClick);
-    }, []);
+    }, [headerNavMenuRef, closeNav]);
 
     return (
         <nav ref={headerNavRef} className="header-nav">
