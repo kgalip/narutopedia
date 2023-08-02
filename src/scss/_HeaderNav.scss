@@ -104,7 +104,7 @@ header > nav {
         border-radius: 0.5rem;
         width: 10rem;
         min-height: auto;
-        max-height: calc(100dvh - 6.96rem);
+        max-height: calc(100dvh - 6.46rem); // Hard coded value depending on header offset height
         background-color: hsl(17, 79%, 58%, 0.95);
         display: block;
         transform: translateY(-10px);
@@ -177,5 +177,6 @@ header > nav {
     header > nav {
         top: 6.16rem; // Hard coded value depending on header offset height
         right: 1.5rem;
+        max-height: calc(100dvh - 7.66rem); // Hard coded value depending on header offset height
     }
 }

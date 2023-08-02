@@ -1,5 +1,5 @@
 header {
-    // Entity image and navigation's hard coded top value in _Entity.scss and _HeaderNav.scss depends on the header height. (Entity is for screens wider than 768px, and HeaderNav for screen wider than 425px)
+    // Entity image and navigation's hard coded top and height value in _Entity.scss and _HeaderNav.scss depends on the header height. (Entity is for screens wider than 768px, and HeaderNav for screen wider than 425px)
     @include header-footer;
     position: sticky;
     top: 0;
