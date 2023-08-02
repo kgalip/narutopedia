@@ -2,7 +2,7 @@ header.show-nav > nav {
     visibility: visible;
     opacity: 1;
     transform: translateX(0);
-    transition: all 150ms;
+    transition: all 150ms, height 0ms;
 }
 
 header > nav {
@@ -104,9 +104,19 @@ header > nav {
         border-radius: 0.5rem;
         width: 10rem;
         min-height: auto;
+        max-height: calc(100dvh - 6.96rem);
         background-color: hsl(17, 79%, 58%, 0.95);
         display: block;
         transform: translateY(-10px);
+
+        &::-webkit-scrollbar {
+            background-color: $dark-orange;
+            width: 4px;
+
+            &-thumb {
+                background-color: $main-light;
+            }
+        }
 
         &.show-discover {
             > .header-nav-default {
