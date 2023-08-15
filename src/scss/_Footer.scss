@@ -33,12 +33,26 @@ footer {
         font-weight: 100;
         text-align: center;
         color: $main-light;
+        margin-top: 1rem;
     }
 }
 
 @include screen-425 {
-    footer > section {
-        grid-template-columns: repeat(2, 1fr);
+    footer {
+        > section {
+            grid-template-columns: repeat(2, 1fr);
+
+            > section {
+                padding: 0 0.75rem;
+                place-self: center start;
+                flex-flow: row wrap;
+                align-items: center;
+            }
+        }
+
+        > p {
+            margin-top: 1.5rem;
+        }
     }
 }
 
@@ -46,11 +60,6 @@ footer {
     footer {
         > section {
             > section {
-                padding: 0 0.75rem;
-                place-self: center start;
-                flex-direction: row;
-                align-items: center;
-
                 &:last-child {
                     place-self: center end;
                 }
