@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import githubLogo from "@/img/github-logo.svg";
@@ -20,7 +22,7 @@ export default function Footer() {
                     </Link>
                 </section>
             </section>
-            <p>&copy; Kemal Galip {year}</p>
+            <p>{year} &copy; Kemal Galip</p>
         </footer>
     );
 }

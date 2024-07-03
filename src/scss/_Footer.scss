@@ -10,7 +10,7 @@ footer {
 
         > section {
             padding: 0.75rem;
-            place-self: center start;
+            place-self: center;
             display: flex;
             flex-direction: column;
             gap: 1rem;
@@ -19,6 +19,7 @@ footer {
                 font-size: 1.25rem;
                 text-decoration: none;
                 text-underline-offset: 2px;
+                text-align: center;
                 color: $dark-orange;
 
                 &:hover {
@@ -47,23 +48,19 @@ footer {
                 place-self: center start;
                 flex-flow: row wrap;
                 align-items: center;
+
+                &:last-child {
+                    place-self: center end;
+                }
+
+                > a {
+                    text-align: start;
+                }
             }
         }
 
         > p {
             margin-top: 1.5rem;
-        }
-    }
-}
-
-@include screen-768 {
-    footer {
-        > section {
-            > section {
-                &:last-child {
-                    place-self: center end;
-                }
-            }
         }
     }
 }

@@ -7,6 +7,7 @@ import HeaderNav from "./HeaderNav";
 
 import lightMode from "../../img/light-mode.svg";
 import darkMode from "../../img/dark-mode.svg";
+import menuIcon from "../../img/menu-icon.svg";
 
 export default function Header() {
     // LIGHT/DARK THEME FUNCTIONALITY
@@ -41,9 +42,7 @@ export default function Header() {
     const headerNavMenuRef = React.useRef<HTMLButtonElement>(null);
 
     function navigationButton() {
-        headerRef.current?.className === ""
-            ? (headerRef.current.className = "show-nav")
-            : (headerRef.current!.className = "");
+        headerRef.current?.className === "" ? (headerRef.current.className = "show-nav") : (headerRef.current!.className = "");
     }
 
     function closeNav() {
@@ -65,26 +64,14 @@ export default function Header() {
                 <Link href="/">NarutoPedia</Link>
                 <div>
                     <button onClick={changeDarkTheme}>
-                        <Image
-                            src={darkTheme ? lightMode : darkMode}
-                            width={36}
-                            height={36}
-                            alt="Light/Dark Theme"
-                        />
+                        <Image src={darkTheme ? lightMode : darkMode} width={36} height={36} alt="Light/Dark Theme" />
                     </button>
                     <button ref={headerNavMenuRef} onClick={navigationButton}>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <Image src={menuIcon} width={36} height={36} alt="Menu" />
                     </button>
                 </div>
             </section>
-            <HeaderNav
-                headerNavMenuRef={headerNavMenuRef}
-                closeNav={closeNav}
-                showDiscover={showDiscover}
-                dontShowDiscover={dontShowDiscover}
-            />
+            <HeaderNav headerNavMenuRef={headerNavMenuRef} closeNav={closeNav} showDiscover={showDiscover} dontShowDiscover={dontShowDiscover} />
         </header>
     );
 }
